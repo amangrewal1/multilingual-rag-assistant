@@ -1,0 +1,4 @@
+[
+  {"query": "screen reader", "expected": "ambiguous"},
+  {"query": "screen reader software", "expected": "clean"}
+]
