@@ -1,0 +1,98 @@
+[
+  {
+    "id": "gold-001",
+    "question": "What contrast ratio does WCAG require for normal text?",
+    "expected_dialect": "en",
+    "expected_refusal": false,
+    "must_cite_docs": ["wcag_basics"],
+    "reference": "WCAG 1.4.3 requires a 4.5:1 contrast ratio for normal text and 3:1 for large text."
+  },
+  {
+    "id": "gold-002",
+    "question": "¿Qué es un lector de pantalla y cuál viene incluido en macOS?",
+    "expected_dialect": "es",
+    "expected_refusal": false,
+    "must_cite_docs": ["screen_readers"],
+    "reference": "VoiceOver is built into macOS and iOS; NVDA and JAWS are the other common screen readers on Windows."
+  },
+  {
+    "id": "gold-003",
+    "question": "screen reader ke liye headings kyun important hain?",
+    "expected_dialect": "hi-en",
+    "expected_refusal": false,
+    "must_cite_docs": ["screen_readers"],
+    "reference": "Users navigate primarily by headings and ARIA landmarks; a clean heading outline is the highest-impact fix."
+  },
+  {
+    "id": "gold-004",
+    "question": "स्क्रीन रीडर उपयोगकर्ता आमतौर पर पेज पर कैसे नेविगेट करते हैं?",
+    "expected_dialect": "hi",
+    "expected_refusal": false,
+    "must_cite_docs": ["screen_readers"],
+    "reference": "Screen reader users navigate by headings and landmarks."
+  },
+  {
+    "id": "gold-005",
+    "question": "Is tabindex=\"5\" una buena idea for keyboard order?",
+    "expected_dialect": "es-en",
+    "expected_refusal": false,
+    "must_cite_docs": ["keyboard_nav"],
+    "reference": "Positive tabindex values are an anti-pattern; they break predictable tab order."
+  },
+  {
+    "id": "gold-006",
+    "question": "Are YouTube's auto-captions enough for WCAG 1.2.2?",
+    "expected_dialect": "en",
+    "expected_refusal": false,
+    "must_cite_docs": ["captions_and_media"],
+    "reference": "Auto-generated captions are not sufficient for 1.2.2 because they miss speaker changes, punctuation, and non-speech audio."
+  },
+  {
+    "id": "gold-007",
+    "question": "How should I indicate that a form field is required?",
+    "expected_dialect": "en",
+    "expected_refusal": false,
+    "must_cite_docs": ["forms_and_errors"],
+    "reference": "Mark required fields with both a visual indicator and the required attribute; aria-required reinforces this for ARIA-only widgets."
+  },
+  {
+    "id": "gold-008",
+    "question": "What is 3.3.8 Accessible Authentication and why does it matter?",
+    "expected_dialect": "en",
+    "expected_refusal": false,
+    "must_cite_docs": ["cognitive_accessibility"],
+    "reference": "It forbids authentication steps that require cognitive function tests without an alternative like password manager or biometrics."
+  },
+  {
+    "id": "gold-009",
+    "question": "Do I need audio description for prerecorded video at AA?",
+    "expected_dialect": "en",
+    "expected_refusal": false,
+    "must_cite_docs": ["captions_and_media"],
+    "reference": "Yes; 1.2.5 Audio Description (Prerecorded) is a Level AA requirement."
+  },
+  {
+    "id": "gold-010",
+    "question": "Que tipo de file format uso for web captions?",
+    "expected_dialect": "es-en",
+    "expected_refusal": false,
+    "must_cite_docs": ["captions_and_media"],
+    "reference": "WebVTT is the web standard and is required by the HTML track element."
+  },
+  {
+    "id": "gold-011",
+    "question": "ਸਕਰੀਨ ਰੀਡਰ ਵਰਤਣ ਵਾਲੇ ਉਪਭੋਗਤਾ ਪੇਜ ਤੇ ਕਿਵੇਂ ਨੈਵੀਗੇਟ ਕਰਦੇ ਹਨ?",
+    "expected_dialect": "pa",
+    "expected_refusal": false,
+    "must_cite_docs": ["screen_readers"],
+    "reference": "Screen reader users navigate primarily by headings and ARIA landmarks."
+  },
+  {
+    "id": "gold-012",
+    "question": "menu dasso, keyboard trap ki honda hai te kive bachna?",
+    "expected_dialect": "pa-en",
+    "expected_refusal": false,
+    "must_cite_docs": ["keyboard_nav", "wcag_basics"],
+    "reference": "WCAG 2.1.2 forbids focus being stuck; users must be able to move focus away with standard keys."
+  }
+]

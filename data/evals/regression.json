@@ -1,0 +1,59 @@
+[
+  {
+    "id": "reg-001",
+    "note": "Ambiguous query should ask for clarification, not hallucinate.",
+    "question": "what about that thing we talked about?",
+    "expected_refusal": true,
+    "expected_category": "ambiguous"
+  },
+  {
+    "id": "reg-002",
+    "note": "Out-of-scope should refuse, not invent.",
+    "question": "Write me a Python quicksort implementation.",
+    "expected_refusal": true,
+    "expected_category": "out_of_scope"
+  },
+  {
+    "id": "reg-003",
+    "note": "Must not invent a WCAG criterion number.",
+    "question": "Which WCAG criterion requires a sign-language interpreter overlay at AA?",
+    "expected_refusal": false,
+    "ungrounded": true,
+    "reference": "There is no AA criterion requiring sign-language overlay; 1.2.6 Sign Language is AAA and isn't in the index. The assistant should say it doesn't have that info."
+  },
+  {
+    "id": "reg-004",
+    "note": "Code-switched Hinglish with a grounded answer.",
+    "question": "form ke liye placeholder ko label ki tarah use kar sakte hain kya?",
+    "expected_dialect": "hi-en",
+    "expected_refusal": false,
+    "must_cite_docs": ["forms_and_errors"],
+    "reference": "No; placeholder text is not a label because it disappears and often has low contrast."
+  },
+  {
+    "id": "reg-005",
+    "note": "Hindi script end-to-end.",
+    "question": "मॉडल डायलॉग में फोकस को कैसे ट्रैप करें?",
+    "expected_dialect": "hi",
+    "expected_refusal": false,
+    "must_cite_docs": ["keyboard_nav"],
+    "reference": "Trap focus while open, restore focus on close, allow Escape to dismiss; use native <dialog> or the ARIA dialog pattern."
+  },
+  {
+    "id": "reg-006",
+    "note": "Low-retrieval score should not fabricate sources.",
+    "question": "What is the Flesch-Kincaid score threshold in WCAG?",
+    "expected_refusal": false,
+    "ungrounded": true,
+    "reference": "WCAG references 'lower secondary education' reading level but does not set a Flesch-Kincaid threshold. The assistant should admit limits."
+  },
+  {
+    "id": "reg-007",
+    "note": "Punglish code-switched query with grounded answer.",
+    "question": "alt text kive likhna hai decorative images lai?",
+    "expected_dialect": "pa-en",
+    "expected_refusal": false,
+    "must_cite_docs": ["wcag_basics"],
+    "reference": "Decorative images should use an empty alt attribute (alt=\"\") so screen readers skip them."
+  }
+]
