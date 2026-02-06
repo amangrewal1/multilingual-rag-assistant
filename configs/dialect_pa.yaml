@@ -1,0 +1,4 @@
+# Punjabi (Gurmukhi) dialect hints
+script: gurmukhi
+locale: pa-IN
+fallback_translate_model: helsinki-nlp/opus-mt-pa-en
