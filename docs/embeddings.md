@@ -1,0 +1,3 @@
+# Embeddings
+
+Multilingual MiniLM (paraphrase-multilingual-MiniLM-L12-v2).
