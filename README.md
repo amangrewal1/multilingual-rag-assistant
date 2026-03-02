@@ -1,5 +1,7 @@
 # Multilingual Conversational AI for Accessibility
 
+![tests](https://github.com/amangrewal1/multilingual-rag-assistant/actions/workflows/test.yml/badge.svg) ![license](https://img.shields.io/badge/license-MIT-blue)
+
 RAG assistant for code-switched queries. Answers grounded in an indexed knowledge base with inline citations, a safety gate for unsafe or ambiguous inputs, and an eval harness for golden / regression / red-team suites.
 
 ## What it does
