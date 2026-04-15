@@ -7,9 +7,32 @@ RAG assistant for code-switched queries. Answers grounded in an indexed knowledg
 ## What it does
 
 - **Dialects:** English, Spanish, Hindi (Devanagari), Hinglish, Spanglish, Punjabi (Gurmukhi), Punglish.
-- **Pipeline:** detect dialect -> safety gate -> normalize-for-retrieval -> top-k vector retrieval -> grounded generation with `[#n]` citations -> optional refusal with translated message.
+- **Pipeline:** detect dialect → safety gate → normalize-for-retrieval → top-k vector retrieval → grounded generation with `[#n]` citations → optional refusal with translated message.
 - **Evals:** golden set (grounded Q&A across dialects), regression (hallucination / ambiguity guards), red team (prompt injection, PII, medical advice, fabrication bait).
-- **Metrics tracked:** faithfulness, answer relevance, citation precision, refusal accuracy, p50/p95 latency.
+
+## Eval metrics
+
+The `evals/` harness produces a JSON report with these metrics per suite:
+
+| Metric                | What it measures                                    | Target   |
+|-----------------------|-----------------------------------------------------|----------|
+| `faithfulness_mean`   | Are claims in the answer supported by cited docs?   | ≥ 0.85   |
+| `answer_relevance_mean` | Does the answer address what was asked?          | ≥ 0.80   |
+| `citation_precision_mean` | Fraction of citations that point to the right doc | ≥ 0.90 |
+| `refusal_accuracy`    | Fraction of refuse/allow decisions matching expected | ≥ 0.95  |
+| `latency_p50_ms`      | Median end-to-end latency per query                 | < 2000 ms |
+| `latency_p95_ms`      | 95th-percentile latency                             | < 5000 ms |
+
+### Suite sizes
+
+| Suite | Cases | Purpose |
+|-------|------:|---------|
+| `golden_set` | 12 | Grounded Q&A across 7 dialects |
+| `regression` | 7 | Known-failure guards (hallucination, ambiguity) |
+| `red_team` | 8 | Prompt injection, PII extraction, medical advice, fabrication bait |
+
+Judge model is a stronger Claude tier than the assistant (see `.env.example`)
+to reduce self-grading bias. Runs require `ANTHROPIC_API_KEY` set.
 
 ## Layout
 
